@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Members";
 
 function customPageHeader()
 { ?>
+  <!-- Place custom HTML for the head tag here -->
   <link rel="stylesheet" href="css/members.css" />
 
 <?php }
@@ -12,11 +14,11 @@ include_once('header.php');
 <main>
   <div class="main">
     <div class="member">
-      <a href="profile.html">
+      <a href="profile.php">
         <img src="images/missing-profile-photo.png" alt="Profile Picture" />
       </a>
       <br />
-      <a class="name-link" href="profile.html">Member Name</a>
+      <a class="name-link" href="profile.php">Member Name</a>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
         mi orci. Nullam cursus nulla ut urna iaculis tempor. Pellentesque
@@ -32,15 +34,15 @@ include_once('header.php');
         nibh, eu eleifend quam varius eu. Fusce ac pretium metus, ac faucibus
         sapien.
       </p>
-      <a href="scores.html" class="works-button">Personal Works</a>
+      <a href="scores.php" class="works-button">Personal Works</a>
     </div>
 
     <div class="member">
-      <a href="profile.html">
+      <a href="profile.php">
         <img src="images/missing-profile-photo.png" alt="Profile Picture" />
       </a>
       <br />
-      <a class="name-link" href="profile.html">Member Name</a>
+      <a class="name-link" href="profile.php">Member Name</a>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
         mi orci. Nullam cursus nulla ut urna iaculis tempor. Pellentesque
@@ -56,18 +58,18 @@ include_once('header.php');
         nibh, eu eleifend quam varius eu. Fusce ac pretium metus, ac faucibus
         sapien.
       </p>
-      <a href="scores.html" class="works-button">Personal Works</a>
+      <a href="scores.php" class="works-button">Personal Works</a>
     </div>
   </div>
   <!--Start of the Right Column -->
   <div class="side">
     <div class="member">
       <h2>Welcome Our Newest Member!</h2>
-      <a href="profile.html">
+      <a href="profile.php">
         <img src="images/missing-profile-photo.png" alt="Profile Picture" />
       </a>
       <br />
-      <a class="name-link" href="profile.html">Member Name</a>
+      <a class="name-link" href="profile.php">Member Name</a>
     </div>
   </div>
 </main>

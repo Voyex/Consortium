@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Home";
 
 function customPageHeader()
 { ?>
+  <!-- Place custom HTML for the head tag here -->
   <link rel="stylesheet" href="css/index.css" />
 
 <?php }
@@ -20,7 +22,7 @@ include_once('header.php');
   </div>
   <div class="content-container">
     <p>Intersted in seeing what we are all about?</p>
-    <a href="projects.html">Check Out Our Projects</a>
+    <a href="projects.php">Check Out Our Projects</a>
   </div>
   <div class="main"></div>
   <!--Start of the Right Column -->

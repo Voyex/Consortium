@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Profile";
 
 function customPageHeader()
 { ?>
+    <!-- Place custom HTML for the head tag here -->
     <link rel="stylesheet" href="css/profile.css" />
 
 <?php }
@@ -38,14 +40,14 @@ include_once('header.php');
                     they could put things like previous groups they have played with.
                 </p>
             </div>
-            <a class="works-button" href="scores.html">All Works</a>
+            <a class="works-button" href="scores.php">All Works</a>
 
 
         </div>
     </div>
     <!--Start of the Right Column -->
     <div class="side">
-        <a class="edit-button" href="editor.html">Edit Profile</a>
+        <a class="edit-button" href="editor.php">Edit Profile</a>
 
         <h2>
             Featured Work

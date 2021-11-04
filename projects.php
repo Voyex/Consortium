@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Projects";
 
 function customPageHeader()
 { ?>
+    <!-- Place custom HTML for the head tag here -->
     <link rel="stylesheet" href="css/projects.css" />
 
 <?php }

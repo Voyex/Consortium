@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Enroll";
 
 function customPageHeader()
 { ?>
+  <!-- Place custom HTML for the head tag here -->
   <link rel="stylesheet" href="css/signup.css" />
 
 <?php }
@@ -38,7 +40,7 @@ include_once('header.php');
 
     <div id="auth-footer">
       Already Have an account?
-      <a class="auth-page-links" href="login.html">Login</a>
+      <a class="auth-page-links" href="login.php">Login</a>
     </div>
   </div>
 </main>

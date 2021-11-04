@@ -1,8 +1,10 @@
 <?php
+#Variable that is used to set the title of the page.
 $PageTitle = "Consortium - Scores";
 
 function customPageHeader()
 { ?>
+    <!-- Place custom HTML for the head tag here -->
     <link rel="stylesheet" href="css/scores.css" />
 
 <?php }
@@ -12,7 +14,7 @@ include_once('header.php');
 <!--Start of the Main Body Area -->
 <main>
     <div class="main">
-        <a href="members.html">Back</a>
+        <a href="members.php">Back</a>
         <a target="_Blank A" href="images/Symphony no. 5 in Cm, Op. 67 - Complete Score.pdf">
             <img class="score" src="images/Beethoven-Heywood-SymphonyNo.5SEPIACOVER_1655x.jpg" alt="Beethoven Symphony"></a>
 
