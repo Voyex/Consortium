@@ -1,0 +1,140 @@
+#login-button {
+    color: darkkhaki;
+}
+
+#auth-pages {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;  
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    background: #2f2f2f;
+    
+
+}
+
+#container {
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+    color: black;
+ }
+ 
+ #card-header {
+     font-size: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 40px;
+     padding-bottom: 30px;
+     text-align: center;
+     
+ }
+ 
+ #auth-footer {
+     position: absolute;
+     bottom: 30px;
+     width: 100%;
+     text-align: center;
+ }
+ 
+ .form-container {
+     padding: 0px 40px 0px 40px;
+     position: relative;
+ 
+ }
+ 
+ .form-object {
+     border-radius: 7px;
+     border-width: 1px;
+     border-style: solid;
+     border-color: gray;
+     font-size: 1em;
+     padding: 10px 0 10px 0;
+     text-indent: 10px;
+     width: 100%;
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+ 
+ }
+ 
+ .form-object:hover {
+     background-color: aliceblue;
+ }
+ 
+ .form-object:focus {
+     outline-style: solid;
+     outline-color: var(--gradient-color-1);
+     border-color: white;
+     background-color: aliceblue;
+     outline-width: 2px;
+     outline-offset: -2px;
+ }
+ 
+ .form-object:invalid {
+     outline-color: red;
+ }
+ 
+ .auth-btn {
+     width: 100%;
+     font-size: 1em;
+     padding: 12px 0 12px 0;
+     border: solid gray 1px;
+     border-radius: 7px;
+     background-color: darkkhaki;
+     color: black;
+     margin-top: 30px;
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+ 
+ }
+ 
+ .auth-btn:hover {
+     background-color: #b3ad66;
+     scale: (1.1, 1.1);
+ }
+ 
+ 
+ #sso {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 10px 0 10px 0;
+ }
+ 
+ .g-signin2 {
+     padding: 10px 0 10px 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .form-container label {
+     padding-left: 15px;
+     color:black;
+     font-weight: bold;
+     font-size: .7em;
+ }
+ 
+ .auth-page-links {
+     text-decoration: none;
+     color: darkkhaki;
+ }
+ 
+ .auth-page-links:active {
+     color: #008FFF80;
+ }
+ #pwd-forgot {
+     margin-bottom: -1em;
+     text-decoration: none;
+     color: gray;
+ }

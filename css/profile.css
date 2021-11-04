@@ -1,0 +1,36 @@
+#profile-button {
+    color: darkkhaki;
+}
+
+.profile-picture {
+    width: 200px;
+}
+
+.main img, a {
+    max-width: 60vw;
+}
+
+.works-button {
+    color: black;
+    text-decoration: none;
+    background-color: darkkhaki;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+}
+
+.works-button:hover {
+    background-color: #b3ad66;
+}
+
+.edit-button {
+    color: black;
+    text-decoration: none;
+    background-color: darkkhaki;
+    padding: 2px 5px 2px 5px;
+    width: 96px;
+    border-radius: 10px;
+}
+
+.edit-button:hover {
+    background-color: #b3ad66;
+}
