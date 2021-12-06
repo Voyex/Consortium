@@ -13,28 +13,29 @@ include_once('header.php');
 
 <main>
   <div id="container">
-    <div id="card-header">
-      <b>SIGN UP</b>
-    </div>
-    <form action="includes/signup.inc.php" method="$_POST">
-      <div class="form-container">
-        <label for="name">Username</label>
-        <input type="text" class="form-object" name="username" id="name" placeholder="Username">
+    <div class="top-container">
+      <div id="card-header">
+        <b>SIGN UP</b>
       </div>
-      <div class="form-container">
-        <label for="email">Email</label>
-        <input type="email" class="form-object" name="email" id="email" placeholder="Email">
-      </div>
-      <div class="form-container">
-        <label for="password">Password</label>
-        <input type="password" class="form-object" name="password" id="password" placeholder="Password">
-      </div>
-      <div class="form-container">
-        <label for="repassword">Confirm Password</label>
-        <input type="password" class="form-object" name="password" id="repassword" placeholder="Password">
-      </div>
-      <div class="form-container">
-        <button type="submit" class="auth-btn">Sign Up</button>
+      <form action="includes/signup.inc.php" method="post">
+        <div class="form-container">
+          <label for="email">Email</label>
+          <input type="email" class="form-object" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="form-container">
+          <label for="password">Password</label>
+          <input type="password" class="form-object" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="form-container">
+          <label for="repassword">Confirm Password</label>
+          <input type="password" class="form-object" name="repassword" id="repassword" placeholder="Password">
+        </div>
+        <div class="form-container">
+          <label for="regcode">Registration Code</label>
+          <input type="password" class="form-object" name="regcode" id="regcode" placeholder="Registration Code">        </div>
+        <div class="form-container">
+          <button type="submit" class="auth-btn" name="submit" id="submit">Sign Up</button>
+        </div>
       </div>
     </form>
 
@@ -42,7 +43,7 @@ include_once('header.php');
       Already Have an account?
       <a class="auth-page-links" href="login.php">Login</a>
     </div>
-  </div>
+</div>
 </main>
 
 <?php include_once('footer.php'); ?>
