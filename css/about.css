@@ -1,3 +1,39 @@
+h1, h2, h3{
+    text-align: center;
+}
+
 #about-button {
     color: darkkhaki;
 }
+.auth-page-links {
+    text-decoration: none;
+    color: darkkhaki;
+}
+
+#types{
+    display: flex;
+}
+
+#left, #right{
+    flex-basis: 50%;
+    padding: 0 5px 0 5px;
+}
+
+.peopleTypesImages{
+    padding-right: 10px; 
+    float: left;
+    height:225px;
+    width:225px;
+}
+
+@media (max-width: 650px) {
+    #types {
+        flex-direction: column;
+    }
+    #left, #right{
+        flex-basis: 100%;
+        padding: 0;
+    }
+}
+
+
