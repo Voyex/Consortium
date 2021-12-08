@@ -15,7 +15,7 @@ include_once('header.php');
   <div class="main">
     <div class="member">
       <a href="profile.php">
-        <img src="images/missing-profile-photo.png" alt="Profile Picture" />
+      <p class = something><img src="images/missing-profile-photo.png" alt="Profile Picture" /></p>
       </a>
       <br />
       <a class="name-link" href="profile.php">Member Name</a>
@@ -39,7 +39,7 @@ include_once('header.php');
 
     <div class="member">
       <a href="profile.php">
-        <img src="images/missing-profile-photo.png" alt="Profile Picture" />
+      <p class = something><img src="images/missing-profile-photo.png" alt="Profile Picture" /></p>
       </a>
       <br />
       <a class="name-link" href="profile.php">Member Name</a>

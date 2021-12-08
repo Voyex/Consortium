@@ -55,7 +55,7 @@ include_once('header.php');
         </h2>
 
         <div id="previousWorks">
-            <a target="_Blank A" href="/images/Symphony no. 5 in Cm, Op. 67 - Complete Score.pdf"> <img src="/images/Beethoven-Heywood-SymphonyNo.5SEPIACOVER_1655x.jpg" alt="Example" width="90%"> </a>
+            <a target="_Blank A" href="images/Symphony no. 5 in Cm, Op. 67 - Complete Score.pdf"> <img src="images/Beethoven-Heywood-SymphonyNo.5SEPIACOVER_1655x.jpg" alt="Example" width="90%"> </a>
 
         </div>
 
