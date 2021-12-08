@@ -2,6 +2,12 @@
     color: darkkhaki;
 }
 
+.something{
+    padding-top: 60px; 
+    padding-right: 10px; 
+    float: left;
+}
+
 .member {
     min-height: 300px;
 }

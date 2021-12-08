@@ -1,3 +1,26 @@
+h1, h2, h3{
+    text-align: center;
+}
+
 #about-button {
     color: darkkhaki;
+}
+.auth-page-links {
+    text-decoration: none;
+    color: darkkhaki;
+}
+
+#types{
+    display: flex;
+}
+
+#left, #right{
+    width: 49%;
+}
+
+.peopleTypesImages{
+    padding-right: 10px; 
+    float: left;
+    height:225px;
+    width:225px;
 }

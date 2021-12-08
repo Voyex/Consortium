@@ -1,6 +1,6 @@
 <?php
 #Variable that is used to set the title of the page.
-$PageTitle = "Consortium - Projects";
+$PageTitle = "Consortium - Projects2";
 
 function customPageHeader()
 { ?>
@@ -24,7 +24,7 @@ include_once('header.php');
                 show requires a tremendous amount of work.
             </p>
         </div>
-        <iframe src="https://www.youtube.com/embed/Sg36juu12tk"></iframe>
+        <iframe src="https://www.youtube.com/embed/fg5Rlvt2Kjs"></iframe>
 
     </div>
     <!--Start of the Right Column -->
@@ -34,12 +34,12 @@ include_once('header.php');
             <h1>
             The Score
             </h1>
-            <a target="_Blank A" href="images/[Free-scores.com]_vivaldi-antonio-concerto-e-major-primavera-spring-426.pdf">
-            <img class="score" src="images/fourSeasons.jpg" alt="Vivaldi Four Seasons"></a>
+            <a target="_Blank A" href="images/Sonata No. 10 In C Major, K.330 - Complete Score.pdf">
+                 <img class="score" src="images/Mozart.png" alt="Mozart"></a>
             <h2>
                 Check out some of our Previous Works
             </h2>
-            <a href="projects2.php" class="works-button"> Beethoven Symphony No.5</a>
+            <a href="projects.php" class="works-button"> Vivaldi, Four Seasons Summer</a>
                 
         </div>
     </div>

@@ -13,18 +13,16 @@ include_once('header.php');
 
 <main>
   <div id="container">
-    <div class="top-container">
-      <div id="card-header">
-        <b>PASSWORD<br>RECOVERY</b>
+    <div id="card-header">
+      <b>PASSWORD<br>RECOVERY</b>
+    </div>
+    <form action="includes/recovery.inc.php" method="$_POST">
+      <div class="form-container">
+        <label for="email">Email</label>
+        <input type="email" class="form-object" name="email" id="email" placeholder="Email">
       </div>
-      <form action="includes/recovery.inc.php" method="$_POST">
-        <div class="form-container">
-          <label for="email">Email</label>
-          <input type="email" class="form-object" name="email" id="email" placeholder="Email">
-        </div>
-        <div class="form-container">
-          <button type="submit" class="auth-btn">Send Recovery Email</button>
-        </div>
+      <div class="form-container">
+        <button type="submit" class="auth-btn">Send Recovery Email</button>
       </div>
     </form>
     <div id="auth-footer">
