@@ -16,7 +16,7 @@
     <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
 
     <link rel="stylesheet" href="css/globalStyle.css" />
-    <link rel="icon" href="images/music_15509 (2).ico" />
+    <link rel="icon" href="images/favicon.ico" />
 
     <script type="text/javascript" src="script/script.js"></script>
     <!--Makes the Header's background transparent when the DOM is loaded-->
@@ -56,20 +56,9 @@
             <div class="right-navbar">
                 <a id="about-button" href="about.php">About Us</a>
                 <a id="members-button" href="members.php">Members</a>
-                <div class="dropdown">
-                    <button class="dropbtn"> Projects </button>
-                    
-                    <div class="dropdown-content">
-                        <a href="projects.php">Vivaldi</a>
-                        <a href="projects2.php">Beethoven</a>
-                        <a href="projects3.php">Mozart</a>
-                    </div>
-                </div>
-                
+                <a id="projects-button" href="projects.php">Projects</a>
                 <a id="login-button" href="login.php">Login</a>
                 <a id="profile-button" href="profile.php">Profile</a>
             </div>
-
-
         </div>
     </header>

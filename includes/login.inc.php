@@ -7,12 +7,12 @@ if(isset($_POST["submit"])) {
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if (emptyLoginInput($email], $pwd) !== false) {
+    if (emptyLoginInput($email, $pwd) !== false) {
         header("location: ../login.php?error=emptyinput");
         exit();
     }
 
-    loginUser($conn, $email], $pwd);
+    loginUser($conn, $email, $pwd);
     }
     else {
         header("location: ../index.php");
