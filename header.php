@@ -14,6 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TEMPORARY: REMOVE AFTER INITIAL DEV PHASE-->
     <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta
+        name="description"
+        content="The website for the music group Consortium"
+    />
+    <meta
+        name="keywords"
+        content="composer, composition, consortium, music"
+    />
+    <meta name="author" content="Mitchell Haley" />
 
     <link rel="stylesheet" href="css/globalStyle.css" />
     <link rel="icon" href="images/favicon.ico" />
