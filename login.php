@@ -8,7 +8,8 @@ function customPageHeader()
   <link rel="stylesheet" href="css/login.css" />
 
 <?php }
-include_once('header.php');
+require_once('header.php');
+if(isset($_SESSION['userID'])) header('location: index.php?error=redirecterror');
 ?>
 <main>
   <div id="container">
@@ -16,7 +17,7 @@ include_once('header.php');
       <div id="card-header">
         <b>LOGIN</b>
       </div>
-      <form action="includes/login.inc.php" method="$_POST">
+      <form action="includes/login.inc.php" method="post">
         <div class="form-container">
           <label for="email">Email</label>
           <input type="email" class="form-object" name="email" id="email" placeholder="Email" />
@@ -24,10 +25,9 @@ include_once('header.php');
         <div class="form-container">
           <label for="password">Password</label>
           <input type="password" class="form-object" name="password" id="password" placeholder="Password" />
-          <a href="recovery.php" id="pwd-forgot">Forgot Password?</a>
         </div>
         <div class="form-container">
-          <button type="submit" class="auth-btn">Login</button>
+          <button type="submit" name='submit' class="auth-btn">Login</button>
         </div>
       </form>
     </div>

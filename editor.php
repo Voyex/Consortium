@@ -8,38 +8,32 @@ function customPageHeader()
   <link rel="stylesheet" href="css/editor.css" />
 
 <?php }
-include_once('header.php');
-?>
+require_once('header.php');
+if(!isset($_SESSION['userID'])) header('location: index.php?error=redirecterror');
+require_once('templates/template.class.php');
+//require_once('templates/profile.tmp.php');
+require_once("footer.php");
+define("TEMPLATES_PATH", "templates");
+$uid = $_SESSION['userID'];
 
-<!--Start of the Main Body Area -->
-<main>
-  <div class="main">
-    <form>
-      <h2>Profile Editor</h2>
-      <label>Upload a Profile Picture</label><br />
-      <input type="file" accept=".pdf" id="profile-selector" />
-      <label for="profile-selector">
-        <img src="images/missing-profile-photo.png">
-      </label> <br><br>
+$profileJSON = file_get_contents("userdata/$uid/profile.json");
 
-      <label>Name</label><br />
-      <input type="text" id="name" /><br /><br />
+$profileObj = json_decode($profileJSON, false);
+$pfpName = null;
 
-      <label>Biography</label><br />
-      <textarea rows="5" cols="50" id="about-self" placeholder="Write a bit about yourself..."></textarea><br /><br />
+$files = glob("userdata/$uid/pfp/*"); // get all file names
+foreach($files as $file){ // iterate files
+    $pfpName = $file;
+}
 
-      <label>Describe your works</label><br />
-      <textarea rows="5" cols="50" id="about-works" placeholder="Write a bit about your works..."></textarea><br /><br />
 
-      <label>Upload a Work</label><br />
-      <input type="file" accept=".pdf" /><br /><br />
+$template = new Template(TEMPLATES_PATH. '/editor.tmp.php');
 
-      <label>Upload a Featured Work</label><br />
-      <input type="file" accept=".pdf" /><br /><br />
+$template->assign('pfplink', $pfpName);
+$template->assign('name', $profileObj->name);
+$template->assign('about', $profileObj->about);
+$template->assign('summary', $profileObj->works);
 
-      <input id="save-button" type="submit" value="Submit Changes" />
-    </form>
-  </div>
-</main>
 
-<?php include_once('footer.php'); ?>
+$template->show();
+

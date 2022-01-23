@@ -7,7 +7,8 @@
 }
 
 .main img, a {
-    max-width: 60vw;
+    max-width: 50vw;
+    max-height: 40vh;
 }
 
 .works-button {
@@ -16,6 +17,7 @@
     background-color: darkkhaki;
     padding: 2px 5px 2px 5px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .works-button:hover {
@@ -33,4 +35,10 @@
 
 .edit-button:hover {
     background-color: #b3ad66;
+}
+
+@media (max-width: 675px) {
+    .main img, a {
+        max-width: 80vw;
+    }
 }

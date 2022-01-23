@@ -13,63 +13,65 @@ include_once('header.php');
 
 <main>
   <div class="main">
-    <div class="member">
-      <a href="profile.php">
-      <p class = something><img src="images/missing-profile-photo.png" alt="Profile Picture" /></p>
-      </a>
-      <br />
-      <a class="name-link" href="profile.php">Member Name</a>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
-        mi orci. Nullam cursus nulla ut urna iaculis tempor. Pellentesque
-        imperdiet eros at enim vehicula molestie. Sed eget nibh dui. Ut
-        condimentum maximus nisl non egestas. Quisque mollis ligula est, at
-        molestie lorem volutpat in. Ut facilisis, metus consectetur molestie
-        maximus, arcu turpis ultrices augue, eu venenatis velit justo at orci.
-        Aliquam tortor dolor, vulputate ultrices augue quis, maximus accumsan
-        ante. Etiam vitae nisi dignissim, pretium nibh nec, mattis orci.
-        Vivamus id lacus nisl. Fusce lectus justo, fermentum nec mi in,
-        lacinia feugiat ipsum. Etiam iaculis tellus et justo tempor elementum.
-        Integer posuere semper purus nec eleifend. Fusce venenatis eleifend
-        nibh, eu eleifend quam varius eu. Fusce ac pretium metus, ac faucibus
-        sapien.
-      </p>
-      <a href="scores.php" class="works-button">Personal Works</a>
-    </div>
+    <?php
+      $all_dirs = glob('userdata/*' , GLOB_ONLYDIR);
+      foreach($all_dirs as $dir) {
+        $tmp = explode('/', $dir);
+        $ext = end($tmp);
 
-    <div class="member">
-      <a href="profile.php">
-      <p class = something><img src="images/missing-profile-photo.png" alt="Profile Picture" /></p>
-      </a>
-      <br />
-      <a class="name-link" href="profile.php">Member Name</a>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
-        mi orci. Nullam cursus nulla ut urna iaculis tempor. Pellentesque
-        imperdiet eros at enim vehicula molestie. Sed eget nibh dui. Ut
-        condimentum maximus nisl non egestas. Quisque mollis ligula est, at
-        molestie lorem volutpat in. Ut facilisis, metus consectetur molestie
-        maximus, arcu turpis ultrices augue, eu venenatis velit justo at orci.
-        Aliquam tortor dolor, vulputate ultrices augue quis, maximus accumsan
-        ante. Etiam vitae nisi dignissim, pretium nibh nec, mattis orci.
-        Vivamus id lacus nisl. Fusce lectus justo, fermentum nec mi in,
-        lacinia feugiat ipsum. Etiam iaculis tellus et justo tempor elementum.
-        Integer posuere semper purus nec eleifend. Fusce venenatis eleifend
-        nibh, eu eleifend quam varius eu. Fusce ac pretium metus, ac faucibus
-        sapien.
-      </p>
-      <a href="scores.php" class="works-button">Personal Works</a>
-    </div>
+        $uid = $ext;
+
+        $profileJSON = file_get_contents("userdata/$uid/profile.json");
+
+        $profileObj = json_decode($profileJSON, false);
+        $pfpURL = null;
+
+        $files = glob("userdata/$uid/pfp/*"); // get all file names
+        foreach($files as $file){ // iterate files
+          $pfpURL = $file;
+        }
+        
+        echo "<div class='member'>";
+        echo "<a href='profile.php?id=$uid'>";
+        echo "<p class = 'something'><img src=$pfpURL alt='Profile Picture' /></p>";
+        echo "</a>";
+        echo "<br/>";
+        echo "<a class='name-link' href='profile.php?id=$uid'>$profileObj->name</a>";
+        echo "<p>$profileObj->about</p>";
+        echo "<a href='scores.php?id=$uid' class='works-button'>Personal Works</a>";
+        echo "</div>";
+      }
+    ?>
   </div>
+
   <!--Start of the Right Column -->
   <div class="side">
     <div class="member">
       <h2>Welcome Our Newest Member!</h2>
-      <a href="profile.php">
-        <img src="images/missing-profile-photo.png" alt="Profile Picture" />
-      </a>
-      <br />
-      <a class="name-link" href="profile.php">Member Name</a>
+      <?php
+        $all_dirs = glob('userdata/*' , GLOB_ONLYDIR);
+        $mostRecent = $all_dirs[sizeof($all_dirs) - 1];
+        
+        $tmp = explode('/', $mostRecent);
+        $ext = end($tmp);
+
+        $uid = $ext;
+
+        $profileJSON = file_get_contents("userdata/$uid/profile.json");
+
+        $profileObj = json_decode($profileJSON, false);
+        $pfpURL = null;
+
+        $files = glob("userdata/$uid/pfp/*"); // get all file names
+        foreach($files as $file){ // iterate files
+          $pfpURL = $file;
+        }
+        
+        echo "<a href='profile.php?id=$uid'>";
+        echo "<img src=$pfpURL alt='Profile Picture' /></a><br/>";
+        echo "<a class='name-link' href='profile.php?id=$uid'>$profileObj->name</a>";
+
+      ?>
     </div>
   </div>
 </main>

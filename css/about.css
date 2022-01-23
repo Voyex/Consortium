@@ -1,6 +1,21 @@
+main {
+    text-align: center;
+    display: flex;
+}
 h1, h2, h3{
     text-align: center;
 }
+
+h1 {
+    border-bottom: 3px solid #505050;
+    border-radius: 2px;
+}
+
+h4 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #505050;
+}
+
 
 #about-button {
     color: darkkhaki;
@@ -12,6 +27,7 @@ h1, h2, h3{
 
 #types{
     display: flex;
+    text-align: left;
 }
 
 #left, #right{
@@ -26,7 +42,7 @@ h1, h2, h3{
     width:225px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 675px) {
     #types {
         flex-direction: column;
     }

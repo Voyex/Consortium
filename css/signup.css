@@ -1,4 +1,4 @@
-#login-button {
+#signup-button {
     color: darkkhaki;
 }
 
@@ -129,7 +129,7 @@ main {
      color: gray;
  }
 
- @media (max-width: 500px) {
+ @media (max-width: 675px) {
     main {
         justify-content: flex-start;
     }

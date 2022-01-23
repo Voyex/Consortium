@@ -8,7 +8,8 @@ function customPageHeader()
   <link rel="stylesheet" href="css/signup.css" />
 
 <?php }
-include_once('header.php');
+require_once('header.php');
+if(isset($_SESSION['userID'])) header('location: index.php?error=redirecterror');
 ?>
 
 <main>

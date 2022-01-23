@@ -8,7 +8,7 @@ function customPageHeader()
     <link rel="stylesheet" href="css/projects.css" />
 
 <?php }
-include_once('header.php');
+require_once('header.php');
 ?>
 
 <main>

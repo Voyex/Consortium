@@ -1,5 +1,5 @@
 .main a, img {
-    max-width: 60vw;
+    max-height: 60vh;
 }
 
 .main a {
@@ -14,8 +14,8 @@
     color: darkkhaki;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 675px) {
     .main a, img {
-        max-width: 90vw;
+        max-height: 80vh;
     } 
 }

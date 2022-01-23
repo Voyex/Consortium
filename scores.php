@@ -8,21 +8,30 @@ function customPageHeader()
     <link rel="stylesheet" href="css/scores.css" />
 
 <?php }
-include_once('header.php');
+require_once('header.php');
 ?>
 
 <!--Start of the Main Body Area -->
 <main>
     <div class="main">
         <a href="members.php">Back</a>
-        <a target="_Blank A" href="images/Symphony no. 5 in Cm, Op. 67 - Complete Score.pdf">
-            <img class="score" src="images/Beethoven-Heywood-SymphonyNo.5SEPIACOVER_1655x.jpg" alt="Beethoven Symphony"></a>
+        <?php
+            
+            $uid = $_GET['id'];
+            $featuredWork = null;
 
-        <a target="_Blank A" href="images">
-            <img class="score" src="images/fourSeasons.jpg" alt="Vivaldi Four Seasons"></a>
-
-        <a target="_Blank A" href="images/Sonata No. 10 In C Major, K.330 - Complete Score.pdf">
-            <img class="score" src="images/Mozart.png" alt="Mozart"></a>
+            $files = glob("userdata/$uid/works/*"); // get all file names
+            if (empty($files)) {
+                echo ("<p>Nothing to see here yet</p>");
+            }
+            foreach($files as $file){ // iterate files
+                if(str_contains($file, 'featured-work')) {
+                    $featuredWork = $file;
+                } else {
+                    echo ("<iframe src=$file width = 50% height= 550px title='featured work'> </iframe>");
+                }
+            }
+        ?>
     </div>
     <!--Start of the Right Column -->
     <div class="side">
@@ -30,9 +39,11 @@ include_once('header.php');
             Featured Score
             <br>
         </h2>
-
-        <div id="previousWorks">
-            <a target="_Blank A" href="images/Symphony no. 5 in Cm, Op. 67 - Complete Score.pdf"> <img src="images/Beethoven-Heywood-SymphonyNo.5SEPIACOVER_1655x.jpg" alt="Example" width="90%"> </a>
+        <?php
+            if($featuredWork != null) {
+                echo("<iframe src=$featuredWork width = 100% height= 550px title='featured work'> </iframe>");
+            }
+        ?>
 
         </div>
     </div>

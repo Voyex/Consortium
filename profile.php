@@ -9,11 +9,16 @@ function customPageHeader()
 
 <?php }
 include_once('header.php');
-if(!isset($_SESSION['userID'])) header('location: index.php?error=redirecterror');
 require_once('templates/template.class.php');
 require_once("footer.php");
 define("TEMPLATES_PATH", "templates");
-$uid = $_SESSION['userID'];
+
+# Sets user ID variable or redirects
+if (isset($_GET['id'])) {
+    $uid = $_GET['id'];
+} elseif (isset($_SESSION['userID'])) {
+    $uid = $_SESSION['userID'];
+} else header('location: index.php?error=redirecterror');
 
 $profileJSON = file_get_contents("userdata/$uid/profile.json");
 
@@ -43,11 +48,17 @@ $template->assign('name', $profileObj->name);
 $template->assign('about', $profileObj->about);
 $template->assign('summary', $profileObj->works);
 $template->assign('bruh', "This is some text");
+$template->assign('scoreslink', "scores.php?id=$uid");
 if($featuredWorkURL == null) {
     $template->assign('featuredlink', "");
 } else {
-    $template->assign('featuredlink',  "<iframe src=$featuredWorkURL width = 90% title='featured work'> </iframe>");
+    $template->assign('featuredlink',  "<iframe src=$featuredWorkURL width = 100% height = 550px title='featured work'> </iframe>");
 
 }
+if (isset($_SESSION['userID'])) {
+    if($uid == $_SESSION['userID']) {
+        $template->assign('edit', '<a class="edit-button" href="editor.php">Edit Profile</a>');
+    } else $template->assign('edit', '');
+} else $template->assign('edit', '');
 
 $template->show();

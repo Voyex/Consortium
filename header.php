@@ -57,8 +57,17 @@
                 <a id="about-button" href="about.php">About Us</a>
                 <a id="members-button" href="members.php">Members</a>
                 <a id="projects-button" href="projects.php">Projects</a>
-                <a id="login-button" href="login.php">Login</a>
-                <a id="profile-button" href="profile.php">Profile</a>
+                <?php
+                    if(isset($_SESSION["userID"])) {
+                    echo "<a id='profile-button' href='profile.php'>Profile</a>";
+                    echo "<a id='signout-button' href='includes/signout.inc.php'>Sign Out</a>";
+                    }
+
+                    else {
+                    echo "<a id='login-button' href='login.php'>Login</a>";
+                    echo "<a id='signup-button' href='signup.php'>Sign Up</a>";
+                    }
+                ?>
             </div>
         </div>
     </header>

@@ -8,7 +8,7 @@ function customPageHeader()
   <link rel="stylesheet" href="css/index.css" />
 
 <?php }
-include_once('header.php');
+require_once('header.php');
 ?>
 
 <!--Start of the Main Body Area -->
@@ -23,6 +23,16 @@ include_once('header.php');
   <div class="content-container">
     <p>Intersted in seeing what we are all about?</p>
     <a href="projects.php">Check Out Our Projects</a>
+  </div>
+
+  <div class="content-container">
+    <p>Learn about our members</p>
+    <a href="projects.php">Members</a>
+  </div>
+
+  <div class="content-container">
+    <p>Interested in joining us?</p>
+    <a href="projects.php">Sign Up</a>
   </div>
   <div class="main"></div>
   <!--Start of the Right Column -->

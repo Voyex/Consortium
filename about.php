@@ -7,7 +7,7 @@ function customPageHeader()
     <!-- Place custom HTML for the head tag here -->
     <link rel="stylesheet" href="css/about.css" />
 <?php }
-include_once('header.php');
+require_once('header.php');
 ?>
 
 <main>
@@ -86,16 +86,13 @@ include_once('header.php');
             </div>
         </div>
     
-        <h2>
-            <br>
+        <h4>
             Interested in becoming a composer or a performer, Get Involved!
-        </h2>
+        </h4>
         
         <p>
-            <br>
             If you are interested in creating unique pieces of music, we are looking for people.
             If playing music is more your style, we are always interested looking for performers.
-
             <br>
             <a style = " color: darkkhaki; = " class="auth-page-links" href="signup.php">Come check us out some time! -> Sign Up</a> 
 

@@ -100,6 +100,7 @@ function emptyLoginInput($email, $pwd) {
     return $result;
 }
 
+# Verifies a user's registration code
 function checkRegCode($conn, $regCode) {
     $regLogin = emailUsed($conn, "regcode");
 
@@ -107,6 +108,32 @@ function checkRegCode($conn, $regCode) {
     $checkRegCode = password_verify($regCode, $hashedRegCode);
 
     return $checkRegCode;
+}
+
+# Verifies a users password with the server
+function verifyPassword($conn, $pwd, $email) {
+    $data = emailUsed($conn, $email);
+    $serverPWD = $data["password"];
+
+    if (password_verify($pwd, $serverPWD)) {
+        return true;
+    } else return false;
+}
+
+# Changes a users password
+function changePassword($conn, $pwd, $email) {
+    $sql = "UPDATE users SET password = ? WHERE email = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailure");
+        exit();   
+    }
+
+    $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "ss", $hashpwd, $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 }
 
 function loginUser($conn, $email, $pwd) {
@@ -128,7 +155,7 @@ function loginUser($conn, $email, $pwd) {
         $_SESSION["userID"] = $loginExists["id"];
         $_SESSION["email"] = $loginExists["email"];
         createUserDir($_SESSION["userID"]);
-        header("location: copySettings.inc.php");
+        header("location: ../index.php?error=none");
         exit();
     }
 }
@@ -154,6 +181,20 @@ function getUID($conn, $email) {
 function createUserDir($uid) {
     if(!file_exists("../userdata/$uid")) {
         if(!mkdir("../userdata/$uid")) {
+            die("Failed to create user directory.");
+        }
+        copy("../userdata/default.json", "../userdata/$uid/profile.json");
+    }
+
+    if(!file_exists("../userdata/$uid/pfp")) {
+        if(!mkdir("../userdata/$uid/pfp")) {
+            die("Failed to create user directory.");
+        }
+        copy("../images/missing-profile-photo.png", "../userdata/$uid/pfp/profile-picture.png");
+    }
+
+    if(!file_exists("../userdata/$uid/works")) {
+        if(!mkdir("../userdata/$uid/works")) {
             die("Failed to create user directory.");
         }
     }

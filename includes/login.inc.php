@@ -11,10 +11,10 @@ if(isset($_POST["submit"])) {
         header("location: ../login.php?error=emptyinput");
         exit();
     }
-
+    
     loginUser($conn, $email, $pwd);
     }
-    else {
-        header("location: ../index.php");
-        exit();
-    }
+else {
+    header("location: ../index.php");
+    exit();
+}

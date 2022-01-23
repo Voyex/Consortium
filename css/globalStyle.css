@@ -150,7 +150,7 @@ footer h3 {
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 675px) {
     header {
         flex-direction: row;
         flex-flow: row wrap;
